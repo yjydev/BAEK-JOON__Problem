@@ -1,13 +1,12 @@
 N,K = map(int,input().split())
 number = list(map(int,input()))
 stack = []
-max_num = num = 0
-del_possible = K
+cnt = K
 
 for i in range(N):
-    while stack and (number[i] > stack[-1]) and del_possible:
+    while stack and (number[i] > stack[-1]) and cnt:
         stack.pop()
-        del_possible -= 1
+        cnt -= 1
     stack.append(number[i])
 print(''.join(map(str,stack[:N-K])))
 
@@ -23,7 +22,7 @@ print(''.join(map(str,stack[:N-K])))
 
 
 
-
+# pop하는게 아니라 주호님처럼 front, tail 하나씩 늘리는 방식으로 풀 수 있을듯..?
 # def check(li, num, i):
 #     global max_num, N, K
 #     if len(str(num)) == N-K:
