@@ -1,9 +1,10 @@
 import sys
 def dfs(n):
-    cnt = 0
+    cnt = 1
     visited = [0] * (N+1)
     stack = []
     stack.append(n)
+    visited[n] = 1
     while stack:
         for w in arr[stack[-1]]:
             if visited[w] == 0:
